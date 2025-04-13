@@ -1,1 +1,0 @@
-# jsmc18.github.io
