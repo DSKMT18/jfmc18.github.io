@@ -3,51 +3,39 @@
 
 <head>
    <meta charset="UTF-8">
-   <title>Форма с выпадающими списками</title>
-   <style>
-      form {
-         padding: 20px;
-         border: 1px solid #ccc;
-         max-width: 400px;
-         margin: 50px auto;
-      }
-
-      input,
-      select,
-      button {
-         width: 100%;
-         margin: 10px 0;
-         padding: 8px;
-         font-size: 16px;
-      }
-   </style>
+   <title>Покупка ранга в JFMC[18]</title>
+   <link rel="stylesheet" href="/css/style.css">
+   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet">
 </head>
 
 <body>
+   <div class="wrapper">
+      <form id="telegramForm">
+         <h2 style="text-align: center;">Отправить заявку</h2>
+         <input type="text" name="nickname" placeholder="Ваш никнейм" required>
 
-   <form id="telegramForm">
-      <h2>Отправить сообщение</h2>
-      <input type="text" name="nickname" placeholder="Ваш никнейм" required>
+         <select name="rank" required>
+            <option value="" disabled selected>Выберите ранг</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+         </select>
 
-      <select name="rank" required>
-         <option value="" disabled selected>Выберите ранг</option>
-         <option value="6">6</option>
-         <option value="7">7</option>
-         <option value="8">8</option>
-      </select>
+         <select name="duration" required>
+            <option value="" disabled selected>Выберите кол-во дней</option>
+            <option value="30">30 дней</option>
+            <option value="60">60 дней</option>
+         </select>
 
-      <select name="duration" required>
-         <option value="" disabled selected>Выберите кол-во дней</option>
-         <option value="30 дней">30 дней</option>
-         <option value="60 дней">60 дней</option>
-      </select>
+         <button type="submit">Отправить</button>
+         <div id="price" style="text-align:center; margin-top:20px; font-size:16px;"></div>
+         <div id="summary" style="text-align:center; margin-top:20px; font-size:16px;"></div>
+         <div id="status" style="text-align:center; margin-top:10px; font-weight:bold;"></div>
 
-      <button type="submit">Отправить</button>
-   </form>
-
-   <div id="successMessage" style="text-align:center; color: #0fc00f; font-weight: bold; display: none;">
-      Заявка успешно отправлена
+      </form>
    </div>
+
 
    <script src="./scripts/telegram.js"></script>
 </body>

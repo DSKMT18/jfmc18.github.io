@@ -1,0 +1,49 @@
+body,
+html {
+   font-family: "Nunito", sans-serif;
+   height: 100%;
+   margin: 0;
+   padding: 0;
+
+}
+
+.wrapper {
+   display: flex;
+   justify-content: center;
+   /* по горизонтали */
+   align-items: center;
+   /* по вертикали */
+   height: 100vh;
+   /* вся высота окна */
+   background: #f0f0f0;
+}
+
+form {
+   padding: 20px;
+   border: 1px solid #ccc;
+   max-width: 400px;
+   width: 100%;
+   background: white;
+   border-radius: 10px;
+   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+input,
+select,
+button {
+   font-family: "Nunito", sans-serif;
+   width: 100%;
+   margin: 10px 0;
+   padding: 8px;
+   font-size: 16px;
+   border-radius: 5px;
+   box-sizing: border-box;
+}
+
+button {
+   background-color: #ce17fc;
+}
+
+button:hover {
+   background-color: #065bdb;
+}
