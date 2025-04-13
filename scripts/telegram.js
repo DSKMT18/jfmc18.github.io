@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let price = '';
 
       if (rank && days && summary[rank] && summary[rank][days]) {
-         price = summary[rank][days].price;
+         const price = summary[rank][days].price;
          const zpvchas = summary[rank][days].zpvchas;
          text = `
             <table style="width: 100%;">
@@ -61,10 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       summaryEl.innerHTML = text;
 
-      return price; // Возвращаем цену для отправки на сервер
+      return price;
    }
 
-   nicknameInput.addEventListener('input', updateSummary);  // не нужно, если не показываем ник
    rankSelect.addEventListener('change', updateSummary);
    durationSelect.addEventListener('change', updateSummary);
 
