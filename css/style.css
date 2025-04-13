@@ -1,93 +1,119 @@
-body,
-html {
+/* Глобальные сбросы */
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+html,
+body {
    font-family: "Nunito", sans-serif;
-   height: 100%;
    margin: 0;
    padding: 0;
-   box-sizing: border-box;
+   height: 100%;
+   overflow-x: hidden;
    background: #f0f0f0;
 }
 
+/* Обёртка */
 .wrapper {
    display: flex;
    justify-content: center;
    align-items: center;
    min-height: 100vh;
-   padding: 20px;
+   padding: 16px;
+   background: #f0f0f0;
 }
 
+/* Форма */
 form {
-   padding: 20px;
-   border: 1px solid #ccc;
    width: 100%;
    max-width: 400px;
+   padding: 16px;
    background: white;
-   border-radius: 10px;
-   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-   box-sizing: border-box;
+   border: 1px solid #ccc;
+   border-radius: 8px;
+   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+   height: auto;
 }
 
-h2 {
-   margin-top: 0;
-   margin-bottom: 20px;
-   font-size: 24px;
+/* Заголовок */
+form h2 {
+   font-size: 22px;
+   margin: 0 0 16px 0;
    text-align: center;
 }
 
+/* Поля формы */
 input,
 select,
 button {
-   font-family: "Nunito", sans-serif;
+   font-family: inherit;
    width: 100%;
-   margin: 10px 0;
-   padding: 12px 15px;
-   font-size: 16px;
-   border-radius: 6px;
+   margin: 8px 0;
+   padding: 10px 12px;
+   font-size: 15px;
+   border-radius: 5px;
    border: 1px solid #ccc;
    box-sizing: border-box;
-   transition: all 0.2s ease;
 }
 
+/* Кнопка */
 button {
    background-color: #ce17fc;
    color: white;
    border: none;
    cursor: pointer;
+   transition: background-color 0.2s ease;
 }
 
 button:hover {
    background-color: #065bdb;
 }
 
+/* Информационные блоки */
 #price,
 #summary,
 #status {
    text-align: center;
-   margin-top: 15px;
-   font-size: 16px;
+   margin-top: 12px;
+   font-size: 15px;
+   min-height: 18px;
 }
 
 #status {
    font-weight: bold;
 }
 
-/* ?? Мобильная адаптация */
+/* ?? Мобильная версия */
 @media (max-width: 600px) {
    .wrapper {
       display: block;
       padding: 0;
-      /* Убираем отступы */
       background: white;
-      min-height: 100vh;
+      min-height: 100dvh;
+      /* динамическая высота экрана */
    }
 
    form {
       max-width: 100%;
       width: 100%;
-      /* Было 100vw — заменили на 100% */
+      padding: 16px;
       border-radius: 0;
       box-shadow: none;
       border: none;
-      padding: 20px;
+   }
+
+   form h2 {
+      font-size: 20px;
+      margin-bottom: 14px;
+   }
+
+   input,
+   select,
+   button {
+      font-size: 16px;
+      padding: 10px 12px;
+      margin: 6px 0;
    }
 }
