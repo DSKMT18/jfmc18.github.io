@@ -4,28 +4,34 @@ html {
    height: 100%;
    margin: 0;
    padding: 0;
-
+   box-sizing: border-box;
+   background: #f0f0f0;
 }
 
 .wrapper {
    display: flex;
    justify-content: center;
-   /* по горизонтали */
    align-items: center;
-   /* по вертикали */
-   height: 100vh;
-   /* вся высота окна */
-   background: #f0f0f0;
+   min-height: 100vh;
+   padding: 20px;
 }
 
 form {
    padding: 20px;
    border: 1px solid #ccc;
-   max-width: 400px;
    width: 100%;
+   max-width: 400px;
    background: white;
    border-radius: 10px;
    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+   box-sizing: border-box;
+}
+
+h2 {
+   margin-top: 0;
+   margin-bottom: 20px;
+   font-size: 24px;
+   text-align: center;
 }
 
 input,
@@ -34,16 +40,54 @@ button {
    font-family: "Nunito", sans-serif;
    width: 100%;
    margin: 10px 0;
-   padding: 8px;
+   padding: 12px 15px;
    font-size: 16px;
-   border-radius: 5px;
+   border-radius: 6px;
+   border: 1px solid #ccc;
    box-sizing: border-box;
+   transition: all 0.2s ease;
 }
 
 button {
    background-color: #ce17fc;
+   color: white;
+   border: none;
+   cursor: pointer;
 }
 
 button:hover {
    background-color: #065bdb;
+}
+
+#price,
+#summary,
+#status {
+   text-align: center;
+   margin-top: 15px;
+   font-size: 16px;
+}
+
+#status {
+   font-weight: bold;
+}
+
+/* ?? Мобильная адаптация */
+@media (max-width: 600px) {
+   .wrapper {
+      display: block;
+      padding: 0;
+      /* Убираем отступы */
+      background: white;
+      min-height: 100vh;
+   }
+
+   form {
+      max-width: 100%;
+      width: 100%;
+      /* Было 100vw — заменили на 100% */
+      border-radius: 0;
+      box-shadow: none;
+      border: none;
+      padding: 20px;
+   }
 }
