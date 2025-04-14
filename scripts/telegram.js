@@ -43,8 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
       let price = '';
 
       if (rank && days && summary[rank] && summary[rank][days]) {
-         const price = summary[rank][days].price;
-         const zpvchas = summary[rank][days].zpvchas;
+         price = summary[rank][days].price;
+         zpvchas = summary[rank][days].zpvchas;
          text = `
             <table style="width: 100%;">
                <tr>
